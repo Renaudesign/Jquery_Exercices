@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="utf-8" />
+  <title>Exercice 3</title>
+</head>
+<body>
+    <input id="numberInput"></input>
+    <button id="guessBtn" >Essayez de devinez mon numéro :)</button>
+  <!--
+    <script>
+    $(function(){
+      let attempts = 1;
+      let numtoguess = Math.floor(Math.random() * 100);
+      console.log("Chut ! La bonne réponse est : " + numtoguess);
+      $("#guessBtn").click(function(){
+        if ($("#numberInput").val() == numtoguess) {
+          alert("Numéro trouvé ! Bravo :D Vous avez réussi en " + attempts + " essais !")
+        }
+        else if($("#numberInput").val() < numtoguess) {
+          alert("Trop petit ! :'(");
+          attempts ++
+        }
+        else if($("#numberInput").val() > numtoguess) {
+          alert("Trop grand ! :'(");
+          attempts ++
+        }
+        else {
+          alert("saisie incorrecte, désolé >.<'");
+          attempts ++
+        }
+      });
+    });
+  </script>
+-->
+<script>
+  $(function(){
+    let attempts = 0;
+    let numtoguess = Math.floor(Math.random() * 100);
+    let answer = $("input").val;
+    console.log("Chut ! La bonne réponse est : " + numtoguess);
+
+    $("#guessBtn").click(function(){
+      attempts ++
+      if(answer > 0 &&  answer < 100){
+        if ($("#numberInput").val() == numtoguess) {
+        alert("Numéro trouvé ! Bravo :D Vous avez réussi en " + attempts + " essais !")
+      }
+      else if($("#numberInput").val() < numtoguess) {
+        alert("Trop petit ! :'(");
+      }
+      else if($("#numberInput").val() > numtoguess) {
+        alert("Trop grand ! :'(");
+      }}
+      else {
+        alert("saisie incorrecte, désolé >.<'");
+      }
+    });
+  });
+</script>
+</body>
+</html>

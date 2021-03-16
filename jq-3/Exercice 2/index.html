@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="utf-8" />
+  <title>Exercice 3</title>
+</head>
+<body>
+    <button id="increment" >+</button>
+    <button id="decrement" >-</button>
+    <input id="numberInput"></input>
+  <script>
+    $(function(){
+      let clicCount =0;
+      $("#increment").click(function(){
+        $("#numberInput").val(++clicCount)
+      });
+      $("#decrement").click(function(){
+        $("#numberInput").val(clicCount)
+      });
+    });
+  </script>
+</body>
+</html>

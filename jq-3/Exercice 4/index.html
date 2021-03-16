@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <style url="./"></style>
+    <meta charset="utf-8" />
+    <title>Exercice 4</title>
+</head>
+<body>
+  <button id="plus10pxHeight" >Hauteur +10 px (Max 100)</button>
+  <button id="setGreen" >Mettre en vert</button>
+  <button id="baseColor" >Réinitialiser la couleur</button>
+  <button id="hidebtn" >Cacher le rectangle</button>
+  <button id="showbtn" hidden >Afficher le rectangle</button>
+  <button id="toggleVisibility">Afficher / Cacher</button>
+  <div id="rectangle"></div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      $("#plus10pxHeight").click(function(){
+       if ($("#rectangle").height()<100){
+           $("#rectangle").height("+=10")
+        }
+        else{
+            $("#rectangle").height(10)
+        }
+      })
+      $("#setGreen").click(function(){
+        $("#rectangle").css("background-color", "green")
+      })
+      $("#baseColor").click(function(){
+        $("#rectangle").css("background-color", "aquamarine")
+      })
+      $("#hidebtn").click(function(){
+        $("#showbtn").show()
+        $("#hidebtn").hide()
+        $("#rectangle").hide()
+      })
+      $("#showbtn").click(function(){
+        $("#rectangle").show()
+        $("#showbtn").hide()
+        $("#hidebtn").show()
+      })
+      $("#toggleVisibility").click(function(){
+        $("#rectangle").toggle()
+      })
+    })
+  </script>
+</body>
+</html>
